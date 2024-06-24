@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2024 a las 22:55:15
+-- Tiempo de generación: 24-06-2024 a las 16:37:41
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -73,6 +73,25 @@ INSERT INTO `tbl_task` (`tbl_task_id`, `tbl_subject_id`, `task_name`, `task_stat
 (7, 4, 'Energía Cinética Aplicada', 'En progreso', '2023-10-06 23:59:00'),
 (8, 6, 'Vida y obra de Davinci', 'Completado', '2023-10-02 23:59:00');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tbl_user`
+--
+
+CREATE TABLE `tbl_user` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(100) NOT NULL,
+  `clave` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`id`, `usuario`, `clave`) VALUES
+(1, 'harold2024', 'hrd2024');
+
 --
 -- Índices para tablas volcadas
 --
@@ -90,6 +109,12 @@ ALTER TABLE `tbl_task`
   ADD PRIMARY KEY (`tbl_task_id`);
 
 --
+-- Indices de la tabla `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -104,6 +129,12 @@ ALTER TABLE `tbl_subject`
 --
 ALTER TABLE `tbl_task`
   MODIFY `tbl_task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT de la tabla `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
